@@ -1,0 +1,21 @@
+name: Run script.bash
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:               # Runs on every push
+    branches:
+      - main          # Change to your default branch
+
+jobs:
+  run-bash-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x ./script.bash
+
+      - name: Run script
+        run: ./script.bash
