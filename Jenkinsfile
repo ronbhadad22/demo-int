@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Test') {
             environment { 
-                CC = "int-test"
+                CC = "int-tet"
             }
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
