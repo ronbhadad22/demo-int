@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Test') {
             environment { 
-                AN_ACCESS_KEY = "int"
+                AN_ACCESS_KEY = "int-test"
             }
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
@@ -15,6 +15,9 @@ pipeline {
         }
 
         stage('Deploy') {
+            environment { 
+                AN_ACCESS_KEY = "int-deploy"
+            }
             steps {
                 sh 'echo "Deploying app..."'
                 sh 'printenv'
