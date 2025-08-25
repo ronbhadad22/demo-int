@@ -2,10 +2,10 @@
 pipeline {
     agent any
     stages {
-        stage('Generate Job') {
+        stage('Test Shared Lib') {
             steps {
                 script {
-                    myJob('example-job')
+                    myLog("This is a test log from the shared library")
                 }
             }
         }
