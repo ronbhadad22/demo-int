@@ -4,6 +4,11 @@ pipeline {
         CC = 'clan'
     }
     stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Running Builds..."'
+            }
+        }
         stage('Test') {
             environment { 
                 CC = "int-tet"
